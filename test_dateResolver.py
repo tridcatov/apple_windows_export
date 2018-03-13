@@ -7,3 +7,4 @@ class TestDateResolver(TestCase):
         self.assertEqual((1, 1, 1970), resolver.resolve("01 января 1970 г."))
         self.assertEqual((1, 1, 1970), resolver.resolve("Непонятное место, 01 января 1970 г."))
         self.assertEqual((12, 12, 2012), resolver.resolve("Встреча миллениума на Кропоткинской, 12 декабря 2012 г."))
+        self.assertEqual(None, resolver.resolve("Non date name"))

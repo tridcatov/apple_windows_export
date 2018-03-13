@@ -22,6 +22,9 @@ class DateResolver:
 
     def resolve(self, str):
         match = self.p.search(str)
+        if match is None:
+            return None
+        
         day = int(match.group(1))
         month_name = match.group(2)
         month = int(self.month_map[month_name])
